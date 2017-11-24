@@ -1,0 +1,61 @@
+\documentclass[autodetect-engine,dvi=dvipdfmx,a4paper,base=11pt, jafont=auto, ja=standard]{bxjsreport}
+\geometry{left=25truemm,top=35truemm,right=25truemm,bottom=50truemm}
+
+\input{packages}
+
+\setcounter{tocdepth}{3}
+\setcounter{page}{-1}
+
+\setlength{\parskip}{0em}
+\setlength{\topsep}{0em}
+
+%\newcommand{\zu}[1]{{\gt \bf 図\ref{#1}}}
+\usepackage[B]{thesis} % 外観調整用
+\usepackage[B]{cover} % 表紙用 
+
+\include{personal} % 表紙必要事項
+\include{keywords}
+
+\begin{document}
+\maketitle
+%\newpage
+
+\pagestyle{empty}
+\vspace*{20pt plus 1fil}
+
+\parindent=1\Cwd
+
+\input{abstract}
+\newpage
+
+%%%%%
+\par
+\vspace{0pt plus 1fil}
+\newpage
+\pagestyle{plain}
+\pagenumbering{roman} % I, II, III, IV 
+\tableofcontents
+\listoffigures
+%\listoftables
+\pagebreak \setcounter{page}{1}
+\pagenumbering{arabic} % 1,2,3
+
+\input{introduction}
+\input{related}
+\input{design}
+\input{implementation}
+\input{evaluation}
+\input{conclusion}
+
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{\numberline{}謝辞}
+\input{thank}
+\newpage
+
+\addcontentsline{toc}{chapter}{\numberline{}参考文献}
+\renewcommand{\bibname}{参考文献}
+
+\bibliographystyle{junsrt}
+\bibliography{bib}
+
+\end{document}

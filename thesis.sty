@@ -1,0 +1,35 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{thesis}[2017/11/20 v0.1 ]
+
+\newif\if@B
+\@Bfalse
+
+\newif\if@M
+\@Mfalse
+
+\DeclareOption{B}{\@Btrue}
+
+\DeclareOption{M}{\@Mtrue}
+
+\ProcessOptions\relax
+
+\renewenvironment{abstract}{%
+  \titlepage
+  \null\vfil
+  \@beginparpenalty\@lowpenalty
+  \begin{center}%
+    {\bfseries\abstractname}%
+    \vspace{5mm}
+    \@endparpenalty\@M
+  \end{center}}%
+  {\par\vfil\null\endtitlepage}
+
+\if@B
+\renewcommand{\abstractname}{要\hspace{2\Cwd}旨}
+\fi
+
+\if@M
+\renewcommand{\abstractname}{概要}
+\fi
+
+\renewcommand{\and}{\hspace*{2\Cwd}}

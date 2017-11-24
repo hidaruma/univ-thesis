@@ -1,0 +1,104 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cover}[2017/11/20 v0.2 for cover of univ graduation thesis]
+
+%----------------------------------------
+\RequirePackage{ulem}
+
+\newif\if@B \@Bfalse
+\newif\if@M \@Mfalse
+
+\DeclareOption{B}{\@Btrue}
+\DeclareOption{M}{\@Mtrue}
+
+\ProcessOptions\relax
+
+\def\advisor#1{\gdef\@advisor{#1}}
+
+\def\institution#1{\gdef\@institution{#1}}
+\def\papertype#1{\gdef\@papertype{#1}}
+\def\majorfield#1{\gdef\@majorfield{#1}}
+
+%\def\abstract#1{\gdef\@abstract{#1}}
+
+\def\era#1{\gdef\@era{#1}}
+\def\erayear#1{\gdef\@erayear{#1}}
+\def\yearandmonth#1{\gdef\@yearandmonth{#1}}
+
+\def\keywords#1{\gdef\@keywords{#1}}
+
+\def\keywordsname{\textbf{Key Words : }}
+%
+
+\def\maketitle{\par
+\begingroup
+\def\@makefnmark{\hbox
+     to\z@{$\m@th^{\@thefnmark}$\hss}}%
+\if@twocolumn
+\twocolumn[\@maketitle]
+\else
+\global\@topnum\z@
+\@maketitle
+\fi
+\thispagestyle{empty}\@thanks
+\endgroup
+
+\let\maketitle\relax
+\let\@maketitle\relax
+\gdef\@keywords{} 
+\let\keywords\relax
+\let\majorfield\relax\gdef\@majorfield{}
+\gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
+
+
+
+\def\@maketitle{
+\newpage\null
+\thispagestyle{empty}
+
+\if@B
+\begin{center}
+\vspace*{2cm}
+{\Large \@era \@erayear 年度}
+\vspace{1cm}
+
+{\Large \@institution}
+\vspace{1cm}
+{\Large \@papertype}
+\vspace{2.4cm}
+{\huge 題目 \baselineskip 1.5em \uline{\huge\@title}} \vfill
+\vspace{6cm plus 2cm minus 2cm}
+\underline{\LARGE 主専攻 \hspace{1cm} \@majorfield }
+\vspace{1cm}
+\underline{\huge 著者 \hspace{1cm} \@author }
+\vspace{5mm}
+\underline{\LARGE 指導教員 ~ \@advisor}
+
+\end{center}
+\fi
+
+\if@M
+\begin{center}
+\vspace*{2cm}
+
+{\Large \@institution}
+\vspace{1cm}
+{\Large \@papertype}
+\vspace{2.4cm}
+
+{\huge \baselineskip 1.5em \@title\\} \vfill
+
+\vspace{6cm plus 2cm minus 2cm}
+
+\vspace{1cm}
+{huge \@author}
+\vspace{5mm}
+{\LARGE （\@majorfield 専攻）}
+\vspace{1cm}
+
+{\LARGE 指導教員 ~ \@advisor}
+\vspace{1cm}
+{\LARGE \@yearandmonth}
+
+\end{center}
+\fi
+}
