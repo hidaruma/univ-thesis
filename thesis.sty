@@ -37,8 +37,31 @@
 \renewcommand{\rmdefault}{ptm}
 \renewcommand{\sfdefault}{ptm}
 
-% from jrepost.cls
 
+% from bxjsreport
+
+\def\@makechapterhead#1{%
+  \vspace*{2\Cvs}% 欧文は50pt
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+    \setlength\@tempdima{\linewidth}%
+      \if@mainmatter
+        \huge\headfont \@chapapp\thechapter\@chappos\hskip1\Cvs
+        \addtolength\@tempdima{-\wd\z@}%
+        \unhbox\z@\nobreak
+        \vtop{\hsize\@tempdima}
+%        \par\nobreak
+%        \vskip \Cvs % 欧文は20pt
+      \fi
+    \fi
+%    \interlinepenalty\@M
+    \huge \headfont #1\par\nobreak
+    \vskip 3\Cvs}} % 欧文は40pt
+
+% end
+
+% from jrepost.cls
+                  
 \setlength\bibindent{1.5em}
 \renewcommand{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
 \renewenvironment{thebibliography}[1]
