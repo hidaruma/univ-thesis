@@ -58,7 +58,15 @@
     \huge \headfont #1\par\nobreak
     \vskip 3\Cvs}} % 欧文は40pt
 
-% end
+\def\@makeschapterhead#1{%
+  \vspace*{2\Cvs}% 欧文は50pt
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \huge \headfont #1\par\nobreak
+    \vskip 3\Cvs}} % 欧文は40pt
+
+% end from bxjsreport.cls
 
 % from jrepost.cls
                   
