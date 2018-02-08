@@ -35,6 +35,10 @@ I redefined command `\and` and `abstract` environment.
 1. Edit .bib file.
 1. Run `latexmk main` .
 
+### Compile subfile(s)
+
+2018/02/09 Added subfiles package. You can compile a file without main.tex.
+
 ## Slide Usage
 You can make slide with using beamer.
 
