@@ -1,6 +1,8 @@
 \documentclass[autodetect-engine,dvi=dvipdfmx,a4paper,base=11pt, jafont=auto, ja=standard]{bxjsreport}
 \geometry{left=25truemm,top=35truemm,right=25truemm,bottom=50truemm}
 
+\usepackage{subfiles}
+
 \input{packages}
 
 \setcounter{tocdepth}{3}
@@ -25,7 +27,7 @@
 
 \parindent=1\Cwd
 
-\input{abstract}
+\subfile{abstract}
 \newpage
 
 %%%%%
@@ -40,22 +42,22 @@
 \pagebreak \setcounter{page}{1}
 \pagenumbering{arabic} % 1,2,3
 
-\input{introduction}
-\input{related}
-\input{design}
-\input{implementation}
-\input{evaluation}
-\input{conclusion}
+\subfile{introduction}
+\subfile{related}
+\subfile{design}
+\subfile{implementation}
+\subfile{evaluation}
+\subfile{conclusion}
 
 \chapter*{謝辞}
 \addcontentsline{toc}{chapter}{\numberline{}謝辞}
-\input{thank}
+\subfile{thank}
 \newpage
 
 \addcontentsline{toc}{chapter}{\numberline{}参考文献}
 \renewcommand{\bibname}{参考文献}
 
 \bibliographystyle{junsrt}
-\bibliography{bib}
+\bibliography{main}
 
 \end{document}

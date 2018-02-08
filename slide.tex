@@ -3,6 +3,8 @@
 \usepackage[sourcehan]{luatexja-preset}
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 
+\usepackage{subfiles}
+
 \input{slide-personal}
 
 \usetheme{default}
@@ -11,11 +13,11 @@
 
 \begin{document}
 \maketitle
-\input{slide-background}
-\input{slide-objective}
-\input{slide-related}
-\input{slide-design}
-\input{slide-implementation}
-\input{slide-evaluation}
-\input{slide-summary}
+\subfile{slide-background}
+\subfile{slide-objective}
+\subfile{slide-related}
+\subfile{slide-design}
+\subfile{slide-implementation}
+\subfile{slide-evaluation}
+\subfile{slide-summary}
 \end{document}
