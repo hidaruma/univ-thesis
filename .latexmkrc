@@ -11,3 +11,4 @@ if ($^O eq 'darwin') {
 } elsif ($^O eq 'linux') {
 	$pdf_previewer = 'evince';
 }
+$biber = 'biber --bblencoding=utf8 -u -U --output_safechars';

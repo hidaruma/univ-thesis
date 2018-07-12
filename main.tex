@@ -2,7 +2,8 @@
 \geometry{left=25truemm,top=35truemm,right=25truemm,bottom=50truemm}
 
 \usepackage{subfiles}
-
+\usepackage[backend=biber]{biblatex}
+\addbibresource{main.bib}
 \input{packages}
 
 \setcounter{tocdepth}{3}
@@ -58,6 +59,6 @@
 \renewcommand{\bibname}{参考文献}
 
 \bibliographystyle{junsrt}
-\bibliography{main}
+\printbibliography
 
 \end{document}
