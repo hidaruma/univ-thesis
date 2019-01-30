@@ -36,13 +36,12 @@
 \vspace{0pt plus 1fil}
 \newpage
 \pagestyle{plain}
-\pagenumbering{roman} % I, II, III, IV 
+\frontmatter
 \tableofcontents
 \listoffigures
 %\listoftables
 \pagebreak \setcounter{page}{1}
-\pagenumbering{arabic} % 1,2,3
-
+\mainmatter
 \subfile{introduction}
 \subfile{related}
 \subfile{design}
@@ -59,7 +58,7 @@
 \renewcommand{\bibname}{参考文献}
 
 \printbibliography
-
+\backmatter
 \subfile{appendix}
 
 \end{document}
