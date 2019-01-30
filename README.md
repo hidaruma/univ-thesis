@@ -8,8 +8,8 @@ You can compile these files in LuaLaTex, XeLaTeX, and pLaTeX.
 ## Environment
 hidaruma's environment is
 
-* OS: Ubuntu 17.04
-* LaTeX: lualatex(TeX Live 2017)
+* OS: Ubuntu 18.04
+* LaTeX: lualatex(TeX Live 2018)
 * Font: SourceHan Family
 
 ## cover.sty
@@ -26,7 +26,7 @@ I redefined command `\and` and `abstract` environment.
 
 1. Edit .tex files.
 1. Edit .bib file.
-1. Run `pbibtex main` 
+1. Run `biber main` 
 1. Run `lualatex main.tex` or other engines.
 
 ### Automatically
